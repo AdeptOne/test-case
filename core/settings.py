@@ -13,7 +13,7 @@ import os.path
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-from django.urls import reverse
+from django.urls import reverse, reverse_lazy
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -141,7 +141,7 @@ MINIMUM_LINK_CHARS = 4
 
 # Redirect
 
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = reverse_lazy('shortener')
 LOGIN_URL = 'account/login/'
 
 

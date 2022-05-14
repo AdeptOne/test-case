@@ -1,16 +1,16 @@
+from django.contrib.auth.models import User
 from django.db import models
 
-from .services import create_shortened_link
+from .utils import create_shortened_link
 
 
 class Link(models.Model):
-    full_link = models.URLField(unique=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+
+    full_link = models.URLField(max_length=300)
     short_link = models.URLField(unique=True, blank=True)
     clicks = models.IntegerField('Кол-во кликов', default=0)
     created_at = models.DateTimeField('Дата создания', auto_now_add=True)
-
-    def get_absolute_url(self):
-        pass
 
     def save(self, *args, **kwargs):
         if not self.short_link:

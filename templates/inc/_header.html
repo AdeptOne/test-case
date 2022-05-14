@@ -1,23 +1,21 @@
 <header>
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
-      <div class="collapse navbar-collapse">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item active">
-            <a class="nav-link" aria-current="page" href="#">Главная</a>
-          </li>
-          <li class="nav-item">
-              {% if request.user.is_authenticated %}
-                  <a class="nav-link" href="{% url 'logout' %}">Выйти</a>
-              {% else %}
-                  <a class="nav-link" href="{% url 'login' %}">Войти</a>
-              {% endif %}
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-  <!-- Navbar -->
-
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{% url 'home' %}" style="color: #979D9E">Главная</a>
+            <ul class="navbar-nav justify-content-end">
+            {% if request.user.is_authenticated %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'logout' %}">Выйти</a>
+                </li>
+            {% else %}
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="{% url 'register' %}">Регистрация</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'login' %}">Войти</a>
+                </li>
+            {% endif %}
+            </ul>
+        </div>
+    </nav>
 </header>
