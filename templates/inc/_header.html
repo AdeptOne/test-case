@@ -5,6 +5,9 @@
             <ul class="navbar-nav justify-content-end">
             {% if request.user.is_authenticated %}
                 <li class="nav-item">
+                    <a class="nav-link" href="{% url 'shortener' %}">Shorten</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="{% url 'logout' %}">Выйти</a>
                 </li>
             {% else %}

@@ -34,7 +34,7 @@
                 <td><a href="{{ link.full_link }}">{{ link.full_link|slice:30 }}...</a></td>
                 <td>{{ link.created_at|date:'d F f' }}</td>
                 <td>
-                    <a href="{{ request|get_short_link:link.short_link }}">{{ request|get_short_link:link.short_link }}</a>
+                    <a target="_blank" href="{{ request|get_short_link:link.short_link }}">{{ request|get_short_link:link.short_link }}</a>
                 </td>
                 <td style="text-align: center">{{ link.clicks }}</td>
             </tr>

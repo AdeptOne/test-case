@@ -5,7 +5,7 @@ from .models import Link
 
 class AddLinkForm(forms.ModelForm):
     full_link = forms.URLField(widget=forms.URLInput(
-        attrs={"class": "form-control form-control-lg", "placeholder": "Выша ссылка для сокращения..."}
+        attrs={"class": "form-control form-control-lg", "placeholder": "Ваша ссылка для сокращения..."}
     ))
 
     class Meta:
